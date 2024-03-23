@@ -1,0 +1,15 @@
+def singleNumber(nums: list[int]) -> int:
+    counterDictionary = {}
+    if len(nums) == 1:
+        return nums[0]
+    for number in nums:
+        counterDictionary[number] = 0
+    for number in nums:
+        counterDictionary[number] += 1
+    min_value = min(counterDictionary.values())
+    min_key = min(counterDictionary, key=counterDictionary.get)
+    return min_key
+    
+nums =[2,2,1]
+
+singleNumber(nums)
